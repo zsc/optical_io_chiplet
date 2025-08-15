@@ -38,6 +38,7 @@
     │         Package Substrate           │
     └─────────────────────────────────────┘
 ```
+这里是说HBM 和 GPU/CPU 都是 7nm logic Die。
 
 关键技术参数：
 - **TSV密度**：10,000-40,000 TSVs/mm²
