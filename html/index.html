@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <title>光互联Chiplet技术教程：面向超大规模AI推理芯片</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/highlight.css">
+    <script src="assets/script.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']],
+                processEscapes: false,
+                packages: {'[+]': ['noerrors', 'ams']}
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            loader: {
+                load: ['[tex]/noerrors', '[tex]/ams']
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>目录</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="sidebar-search">
+                <input type="text" id="sidebar-search-input" placeholder="搜索..." autocomplete="off">
+            </div>
+            <div id="tree-container">
+                <nav class="tree-nav" role="tree">
+                    <div class="tree-item active" >
+                        <a href="index.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">光互联Chiplet技术教程：面向超大规模AI推理芯片</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter1.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第1章：从2.5D到Chiplet - 封装互联技术演进史</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter2.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第2章：电互联的极限与光互联的机遇</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter3.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第3章：硅光子学基础与器件</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter4.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第4章：Co-Packaged Optics (CPO)技术详解</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter5.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第5章：光互联协议与标准</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter6.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第6章：>100T AI推理芯片的光互联架构</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter7.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第7章：数据中心全光交换网络</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter8.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第8章：系统级设计考虑</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter9.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第9章：产业案例深度分析</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter10.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第10章：未来技术路线图</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="CLAUDE.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">Untitled</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        
+        <main class="content">
+            <article>
+                <h1 id="chipletai">光互联Chiplet技术教程：面向超大规模AI推理芯片</h1>
+<h2 id="_1">教程简介</h2>
+<p>随着大语言模型（LLM）参数规模突破万亿、推理吞吐量需求超过100 TOPS，传统的电互联技术在带宽密度、功耗效率和传输距离上已接近物理极限。光互联Chiplet技术作为突破性解决方案，正在成为下一代AI芯片的关键使能技术。</p>
+<p>本教程专为资深程序员和AI科学家编写，系统介绍光互联Chiplet从原理到实践的完整技术栈，重点关注&gt;100T推理场景的实际应用，同时覆盖训练场景的特殊需求。</p>
+<h2 id="_2">目标读者</h2>
+<ul>
+<li>AI芯片架构师和系统设计师</li>
+<li>高性能计算系统工程师</li>
+<li>数据中心网络架构师</li>
+<li>对前沿互联技术感兴趣的研究人员</li>
+</ul>
+<h2 id="_3">预备知识</h2>
+<ul>
+<li>计算机体系结构基础</li>
+<li>数字信号处理基本概念</li>
+<li>AI推理和训练的基本原理</li>
+<li>基础的半导体封装知识</li>
+</ul>
+<h2 id="_4">章节结构</h2>
+<h3 id="_5">第一部分：技术演进与背景</h3>
+<h4 id="125dchiplet-"><a href="chapter1.html">第1章：从2.5D到Chiplet - 封装互联技术演进史</a></h4>
+<ul>
+<li>2.5D封装：硅中介层（Interposer）时代</li>
+<li>3D封装：垂直互联的突破</li>
+<li>Chiplet标准化：UCIe的诞生与演进</li>
+<li>案例研究：AMD EPYC的Chiplet成功之路</li>
+</ul>
+<h4 id="2"><a href="chapter2.html">第2章：电互联的极限与光互联的机遇</a></h4>
+<ul>
+<li>SerDes技术的功耗墙（56G/112G/224G PAM4）</li>
+<li>Copper Reach的物理限制</li>
+<li>光互联的基本原理与优势</li>
+<li>成本与性能的权衡分析</li>
+</ul>
+<h3 id="_6">第二部分：光互联核心技术</h3>
+<h4 id="3"><a href="chapter3.html">第3章：硅光子学基础与器件</a></h4>
+<ul>
+<li>硅光子平台概述（TSMC、Intel、GlobalFoundries）</li>
+<li>关键光学器件：调制器、探测器、波导、耦合器</li>
+<li>光源方案：External Laser vs Integrated Laser</li>
+<li>封装挑战：光纤耦合与热管理</li>
+</ul>
+<h4 id="4co-packaged-optics-cpo"><a href="chapter4.html">第4章：Co-Packaged Optics (CPO)技术详解</a></h4>
+<ul>
+<li>CPO vs Pluggable Optics架构对比</li>
+<li>Linear Drive技术（LPO/LRO）</li>
+<li>功耗优化：从25pJ/bit到3pJ/bit的演进</li>
+<li>案例研究：Broadcom Bailly CPO交换芯片</li>
+</ul>
+<h4 id="5"><a href="chapter5.html">第5章：光互联协议与标准</a></h4>
+<ul>
+<li>OIF Co-Packaging标准体系</li>
+<li>UCIe的光学扩展</li>
+<li>CXL over Optics的探索</li>
+<li>误码率与前向纠错（FEC）设计</li>
+</ul>
+<h3 id="_7">第三部分：系统架构与实现</h3>
+<h4 id="6100t-ai"><a href="chapter6.html">第6章：&gt;100T AI推理芯片的光互联架构</a></h4>
+<ul>
+<li>推理vs训练的互联需求差异</li>
+<li>Chiplet拓扑设计：2D Mesh、Dragonfly、Fat Tree</li>
+<li>内存互联：HBM与光互联的协同</li>
+<li>案例研究：NVIDIA GB200 NVL72系统</li>
+</ul>
+<h4 id="7"><a href="chapter7.html">第7章：数据中心全光交换网络</a></h4>
+<ul>
+<li>机架内光互联（Scale-up）</li>
+<li>机架间光网络（Scale-out）</li>
+<li>全光交换机架构与调度算法</li>
+<li>与传统Ethernet/InfiniBand的融合</li>
+</ul>
+<h4 id="8"><a href="chapter8.html">第8章：系统级设计考虑</a></h4>
+<ul>
+<li>热设计与功耗管理</li>
+<li>可靠性、可用性与可维护性（RAS）</li>
+<li>成本模型与TCO分析</li>
+<li>软件栈与编程模型适配</li>
+</ul>
+<h3 id="_8">第四部分：前沿进展与未来</h3>
+<h4 id="9"><a href="chapter9.html">第9章：产业案例深度分析</a></h4>
+<ul>
+<li>Intel Ponte Vecchio：EMIB + Foveros光互联探索</li>
+<li>AMD MI300：2.5D到3D的混合架构</li>
+<li>初创公司创新：Ayar Labs、Lightmatter、Celestial AI</li>
+<li>国内进展：光互联技术现状与机遇</li>
+</ul>
+<h4 id="10"><a href="chapter10.html">第10章：未来技术路线图</a></h4>
+<ul>
+<li>2024-2030技术演进预测</li>
+<li>新材料与新器件：III-V族集成、量子点激光器</li>
+<li>Compute-in-Network：光学计算的可能性</li>
+<li>标准化进程与生态建设</li>
+</ul>
+<h2 id="_9">学习建议</h2>
+<ol>
+<li><strong>循序渐进</strong>：建议按章节顺序学习，每章的练习题有助于巩固理解</li>
+<li><strong>实践导向</strong>：结合实际的芯片规格书和系统设计文档深入理解</li>
+<li><strong>持续更新</strong>：光互联技术发展迅速，建议关注最新的会议论文（如OFC、ECOC、Hot Chips）</li>
+<li><strong>交流讨论</strong>：加入相关技术社区，与同行交流实践经验</li>
+</ol>
+<h2 id="_10">配套资源</h2>
+<ul>
+<li>练习题参考答案（每章末尾折叠显示）</li>
+<li>设计检查清单（Checklist）</li>
+<li>常见问题与陷阱（Gotchas）</li>
+<li>推荐阅读论文列表</li>
+<li>相关开源项目链接</li>
+</ul>
+<h2 id="_11">版本信息</h2>
+<ul>
+<li>版本：1.0</li>
+<li>更新日期：2024年12月</li>
+<li>作者团队：AI芯片架构研究组</li>
+</ul>
+<hr />
+<p><em>本教程持续更新中，欢迎反馈和贡献</em></p>
+            </article>
+            
+            <nav class="page-nav"><a href="chapter1.html" class="nav-link next">第1章：从2.5D到Chiplet - 封装互联技术演进史 →</a></nav>
+        </main>
+    </div>
+</body>
+</html>
