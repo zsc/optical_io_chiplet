@@ -255,10 +255,13 @@ AMD EPYC处理器的Chiplet journey：
      │  └─────┘  └─────┘            │
      └───────────────────────────────┘
 ```
+CCD = Core Complex Die（核心复合芯片），每个 CCD 内含 2 个 CCX（Core Complex），每个 CCX 有 4 个 CPU 核心 + L3 缓存。
+
+IOD = I/O Die（输入输出芯片） 用 14 nm 工艺制造。集成内存控制器、PCIe 控制器、Infinity Fabric 路由等所有 I/O 相关逻辑，不含 CPU 核。
 
 **Zen 3 (2020) - Milan**：
-- 架构优化，8核CCX→8核CCD
-- 统一L3缓存，降低延迟
+- 架构优化，8核CCX→8核CCD（取消 CCX 概念，一个 CCD 就是一个完整的核心复合单元，每个 CCD = 8 个核心 共享 一个 32 MB L3 缓存)
+- 统一L3缓存，降低延迟（所有 8 核之间访问 L3 的延迟一致，调度更灵活，游戏和多线程任务性能提升明显）
 
 **Zen 4 (2022) - Genoa**：
 - 12个5nm CCD + 1个6nm IOD
@@ -270,7 +273,7 @@ AMD EPYC处理器的Chiplet journey：
 **拓扑结构**：
 ```
    CCD0 ═══╗     ╔═══ CCD4
-   CCD1 ═══╬═════╬═══ CCD5
+   CCD1 ═══╬     ╬═══ CCD5
    CCD2 ═══╬═IOD═╬═══ CCD6
    CCD3 ═══╝     ╚═══ CCD7
 ```
