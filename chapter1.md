@@ -211,6 +211,7 @@ Advanced Package (pitch < 25μm):
                   ║              ║
             [Forwarded Clock]  [Flow Control]
 ```
+“双线”（──┬── vs ══╦══）在这里表示多路信号从一个总线分出，或者说是共享传输路径，相当于逻辑上的 MUX（多路复用）。
 
 ### 1.3.4 生态系统发展
 
